@@ -1,0 +1,15 @@
+<h1>New Employee</h1>
+
+  <div>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %>
+    <% @employee.errors.full_messages_for(:first_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <%= link_to "New Employee", new_employee_path %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

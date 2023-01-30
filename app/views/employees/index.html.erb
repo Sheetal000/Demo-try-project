@@ -1,0 +1,12 @@
+<h1>Employees</h1>
+
+<ul>
+  <% @employee.each do |employee| %>
+    <li>
+      <%= employee.first_name %>
+      <%= employee.last_name %>
+      <%= employee.age %>
+      <%= employee.address%>
+    </li>
+  <% end %>
+</ul>
