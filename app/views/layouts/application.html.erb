@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+   <div>
+    <h1 style="background: red">Header</h1>
+    <% if user_signed_in? %>
+     <%= button_to "sign_out",destroy_user_session_path, method: :delete %>
+     <%= button_to "New_post",new_post_path, method: :get %>
+    <% else %>
+     <%= link_to "sign_up",new_user_registration_path %>
+     <%= link_to "sign_in",new_user_registration_path %>
+    <% end %>
+
+  </div>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<%= form_with(model: @post) do |form| %>
+
+
+    <%= form.label :title, "title:" %><br>
+    <%= form.text_field :title %><br>
+
+    <%= form.label :description, "Description:" %><br>
+    <%= form.text_area :description %><br>
+
+    <%= form.label :user_id, "User_id:" %><br>
+    <%= form.text_area :user_id %><br>
+    
+    <%= form.label :category_id, "category_id:" %><br>
+    <%= form.collection_select :category_id, Category.order(:name),:id,:name %>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
