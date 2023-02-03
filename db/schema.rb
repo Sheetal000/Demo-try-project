@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_01_093224) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_03_122302) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "post_id"
+    t.integer "user_id"
+    t.boolean "active"
   end
 
   create_table "posts", force: :cascade do |t|
