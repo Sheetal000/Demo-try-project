@@ -37,6 +37,17 @@ class PostsController < ApplicationController
 				redirect_to "/"
 		end
 
+
+		def like
+			@post = Post.find_by(params[:id])
+			if params[:format] == 'like'
+				@post.liked_by current_user
+			elsif params[:format] == "unlike"
+				@post.unliked_by current_user
+			end
+		end
+
+		private
     def post_params   
         params.require(:post).permit(:title, :description, :user_id, :category_id)   
     end

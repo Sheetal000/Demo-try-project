@@ -8,12 +8,11 @@
    
     <%= post.likes.size %> <%= (post.likes.size) == 1 ? 'Like' : 'Likes'%>
 
-    <% pre_like = post.likes.where(active: true).find { |like| like.user_id == current_user.id} %><br>
+    <% pre_like = post.likes.where(user_id: current_user.id).any? %><br>
 		<% if pre_like %>
-			<%= button_to 'UnLike', post_likes_path(post), method: :post %><br>
-      # <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %><br>
+			<%= button_to 'UnLike', post_path(post), method: :post %><br>
     <% else %>
-      <%= button_to 'Like', post_likes_path(post), method: :post %><br>
+      <%= button_to 'Like', post_path(post), method: :post %><br>
    <% end %>
 
 	 <%= button_to "delete",post_path(post),method: :delete %><br>
