@@ -1,20 +1,27 @@
 <h1> Dashboard</h1>
-
+<%= form_tag search_posts_path, method: :GET %>
+  <%= text_field_tag(:search,params[:search]) %><%= submit_tag ('search')%><br>
+  
 <% @posts.each do |post| %>
     <b> title:</b><%= post.title %><br>
 
     <b> description:</b><%= post.description %><br><br>
-
    
-    <%= post.likes.size %> <%= (post.likes.size) == 1 ? 'Like' : 'Likes'%>
+    <%= post.likes.size %> <%= (post.likes.size) == 1 ? 'Like' : 'Likes'%> 
+
+    <%if post.insta_image.attached? %>
+      <p>Image: <%= image_tag post.insta_image, height:150,width:100 %></p> 
+    <% end %>
 
     <% pre_like = post.likes.where(user_id: current_user.id).any? %><br>
 		<% if pre_like %>
-			<%= button_to 'UnLike', post_path(post), method: :post %><br>
+			<%= button_to 'UnLike', like_post_post_path(post), method: :put %><br>
     <% else %>
-      <%= button_to 'Like', post_path(post), method: :post %><br>
+      <%= button_to 'Like', like_post_post_path(post), method: :put %><br>
    <% end %>
 
-	 <%= button_to "delete",post_path(post),method: :delete %><br>
+   <%= button_to "Edit Post", edit_post_path(post), {method: :get}%><br>
+
+   <%= button_to "delete",post_path(post),method: :delete %><br>
 
 <% end %>

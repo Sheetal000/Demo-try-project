@@ -3,7 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.0"
 
-gem 'byebug', '~> 9.0', '>= 9.0.6'
+# gem 'byebug', '~> 9.0', '>= 9.0.6'
+gem 'byebug', '~> 11.1', '>= 11.1.3'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.1"
 
@@ -74,3 +75,9 @@ end
 
 
 gem 'devise'
+
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'devise_token_auth'
+gem 'omniauth'
+
+gem 'rest-client'

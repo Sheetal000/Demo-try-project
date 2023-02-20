@@ -1,0 +1,17 @@
+<h1>Edit Post</h1>
+<%= form_with model: @post do |form| %>
+ 
+<%= form.label :title %>
+  <%= form.text_field :title  %>
+  <br><br>
+
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+  <br><br>
+
+  <%= form.label :insta_image %>
+  <%= form.file_field :insta_image %>
+  <br><br>
+
+  <%= form.submit %>
+<% end %>  
