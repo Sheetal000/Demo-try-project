@@ -59,6 +59,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.force_ssl = false
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
@@ -70,5 +71,20 @@ Rails.application.configure do
 
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_controller.asset_host = ENV['HOST']
+  config.action_mailer.asset_host = ENV['HOST']
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+
+    config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port:  587,
+    user_name: "sheetal.seriwala@devripples.com",
+    password: "eftqmhsryugwefpa",
+    authentication: 'plain',
+    enable_starttls_auto: true,
+    openssl_verify_mode: "none"
+  }
 
 end

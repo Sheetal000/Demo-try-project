@@ -13,7 +13,7 @@
       <p>Image: <%= image_tag post.insta_image, height:150,width:100 %></p> 
     <% end %>
 
-    <% pre_like = post.likes.where(user_id: current_user.id).any? %><br>
+    <%# pre_like = post.likes.where(user_id: current_user.id).any? %><br>
 		<% if pre_like %>
 			<%= button_to 'UnLike', like_post_post_path(post), method: :put %><br>
     <% else %>

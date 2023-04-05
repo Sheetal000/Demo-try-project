@@ -16,4 +16,4 @@ Category.where(name: "shelly").first_or_create
 # User.where(first_name: "job").first_or_create
 # User.where(last_name: "shah").first_or_create
 # User.where(age: 67).first_or_create
-# User.where(mobile_number: 3456789123).first_or_create
+# User.where(mobile_number: 3456789123).first_or_createAdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

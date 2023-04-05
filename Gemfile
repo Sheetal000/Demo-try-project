@@ -53,12 +53,22 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # gem 'rspec-rails'
+  gem 'rspec-sonarqube-formatter'
+  gem 'rails-erd'
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers', '~> 4.0'
+  gem 'webmock'
+  gem 'shoulda-callback-matchers', '~> 1.1', '>= 1.1.4'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'rswag-specs'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -71,6 +81,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'database_cleaner-active_record'
+  gem 'database_cleaner'
+  gem 'simplecov'
 end
 
 
@@ -81,3 +94,27 @@ gem 'devise_token_auth'
 gem 'omniauth'
 
 gem 'rest-client'
+
+gem 'whenever', require: false
+gem "sidekiq-cron"
+# gem "sidekiq", '~> 6.2.0'
+# gem 'redis'
+gem 'sidekiq'
+gem 'redis'
+
+
+
+gem 'activeadmin'
+
+gem 'sassc-rails'
+
+gem 'arctic_admin'
+
+gem 'jwt'
+gem 'bcrypt','~> 3.1.7'
+
+
+gem 'rswag'
+# gem 'rswag-api'
+# gem 'rswag-ui'
+gem "multi_json", "~> 1.15"
