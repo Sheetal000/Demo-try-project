@@ -1,5 +1,6 @@
 require 'bcrypt'
 class User < ApplicationRecord
+    paginates_per 25
     # require "securerandom"
     include BCrypt
     has_secure_password

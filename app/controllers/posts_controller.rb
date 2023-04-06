@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
     def index
       @posts = Post.all.includes(:likes)
+      @posts = Post.order(:title).page params[:page]
       render json: @posts
     end
 

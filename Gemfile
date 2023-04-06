@@ -97,10 +97,10 @@ gem 'rest-client'
 
 gem 'whenever', require: false
 gem "sidekiq-cron"
-# gem "sidekiq", '~> 6.2.0'
-# gem 'redis'
-gem 'sidekiq'
+# gem "sidekiq", '~> 6.1.0'
 gem 'redis'
+gem 'sidekiq'
+# gem 'redis'
 
 
 
@@ -118,3 +118,8 @@ gem 'rswag'
 # gem 'rswag-api'
 # gem 'rswag-ui'
 gem "multi_json", "~> 1.15"
+
+
+# gem 'will_paginate', '~> 3.3'
+
+ gem 'kaminari'
